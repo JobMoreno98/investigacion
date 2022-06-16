@@ -97,7 +97,7 @@ class ProyectoController extends Controller
         $proyecto->hipotesis = $request->input('hipotesis');
         $proyecto->tipo_proyecto = $request->input('tipo_proyecto');
         $proyecto->criterios_eticos = $request->input('criterios_eticos');
-        $proyecto->referencias = $request->input('refencias');
+        $proyecto->referencias = $request->input('referencias');
         $proyecto->anexos = $request->input('anexos');
         $proyecto->monto_pasaje_aereo_nacional = $request->input('monto_pasaje_aereo_nacional');
         $proyecto->monto_pasaje_terrestre_nacional = $request->input('monto_pasaje_terrestre_nacional');
@@ -106,7 +106,6 @@ class ProyectoController extends Controller
         $proyecto->monto_equipos_menores_oficina = $request->input('monto_equipos_menores_oficina');
         $proyecto->monto_materiales = $request->input('monto_materiales');
         $proyecto->monto_total = $request->input('monto_total');
-
         $proyecto->justificacion = $request->input('justificacion');
         $proyecto->personal_adscrito = $request->input('personal_adscrito');
         $proyecto->estudiantes_adscritos = $request->input('estudiantes_adscritos');
@@ -117,10 +116,7 @@ class ProyectoController extends Controller
         $proyecto->vinculacion_grupos_investigacion = $request->input('vinculacion_grupos_investigacion');
         $proyecto->vinculacion_sectores = $request->input('vinculacion_sectores');
        // $proyecto->tiempo_proyecto = $request->input('tiempo_proyecto');
-        
-        
         //$proyecto->generacion_conocimiento = $request->input('generacion_conocimiento');
-        
         //Subida del archivo proyecto en extenso
         $extenso = $request->file('proyecto_extenso');
         if($extenso){
@@ -141,7 +137,7 @@ class ProyectoController extends Controller
         }*/
         
         $proyecto->save();
-        return $request;
+        //return $request;
         return redirect('proyectos')->with(array(
             'message'=>'El Proyecto se subió Correctamente'
         ));
