@@ -137,7 +137,7 @@ class ProyectoController extends Controller
         if($extenso){
             $extenso_path = time().$extenso->getClientOriginalName();
             \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
-            $proyecto->anexo = $extenso_path;
+            $proyecto->anexos = $extenso_path;
         }
         
 
@@ -160,7 +160,8 @@ class ProyectoController extends Controller
 
     public function show($id)
     {
-        $proyecto = VsProyecto::find($id);
+        $proyecto = Proyecto::find($id);
+
         return view('proyecto.detalleProyecto')->with('proyecto', $proyecto);
     }
 
@@ -202,48 +203,62 @@ class ProyectoController extends Controller
         $proyecto->nombre_responsable = $request->input('nombre_responsable');
         $proyecto->correo_responsable = $request->input('correo_responsable');
         $proyecto->nombramiento = $request->input('nombramiento');
+        $proyecto->cuerpo_academico = $request->input('cuerpo_academico');
         $proyecto->reconocimiento_sni = $request->input('reconocimiento_sni');
         $proyecto->reconocimiento_promep = $request->input('reconocimiento_promep');
         $proyecto->reconocimiento_proesde = $request->input('reconocimiento_proesde');
-        $proyecto->cuerpo_academico = $request->input('cuerpo_academico');
         $proyecto->departamento = $request->input('departamento');
         $proyecto->division = $request->input('division');
+        $proyecto->tipo_registro = $request->input('tipo_registro');
         $proyecto->registro_otras_instituciones = $request->input('registro_otras_instituciones');
         $proyecto->financiamiento = $request->input('financiamiento');
-        $proyecto->tipo_registro = $request->input('tipo_registro');
+        $proyecto->titulo_proyecto = $request->input('titulo_proyecto');
+        $proyecto->abstract = $request->input('abstract');
+        $proyecto->fecha_inicio = $request->input('fecha_inicio');
+        $proyecto->fecha_fin = $request->input('fecha_fin');
+        $proyecto->metodologia = $request->input('metodologia');
+        $proyecto->objetivos = $request->input('objetivos');
+        $proyecto->preguntas = $request->input('preguntas');
+        $proyecto->hipotesis = $request->input('hipotesis');
+        $proyecto->tipo_proyecto = $request->input('tipo_proyecto');
+        $proyecto->criterios_eticos = $request->input('criterios_eticos');
+        $proyecto->referencias = $request->input('referencias');
         $proyecto->monto_pasaje_aereo_nacional = $request->input('monto_pasaje_aereo_nacional');
         $proyecto->monto_pasaje_terrestre_nacional = $request->input('monto_pasaje_terrestre_nacional');
         $proyecto->monto_combustible_vehiculo = $request->input('monto_combustible_vehiculo');
         $proyecto->monto_viaticos = $request->input('monto_viaticos');
-        $proyecto->monto_materiales = $request->input('monto_materiales');
         $proyecto->monto_equipos_menores_oficina = $request->input('monto_equipos_menores_oficina');
+        $proyecto->monto_materiales = $request->input('monto_materiales');
         $proyecto->monto_total = $request->input('monto_total');
         $proyecto->justificacion = $request->input('justificacion');
         $proyecto->personal_adscrito = $request->input('personal_adscrito');
         $proyecto->estudiantes_adscritos = $request->input('estudiantes_adscritos');
         $proyecto->colaboradores_externos = $request->input('colaboradores_externos');
-        $proyecto->titulo_proyecto = $request->input('titulo_proyecto');
-        $proyecto->abstract = $request->input('abstract');
-        $proyecto->fecha_inicio = $request->input('fecha_inicio');
-        $proyecto->fecha_fin = $request->input('fecha_fin');
-        $proyecto->tipo_proyecto = $request->input('tipo_proyecto');
-        $proyecto->tiempo_proyecto = $request->input('tiempo_proyecto');
-        $proyecto->objetivos = $request->input('objetivos');
-        $proyecto->preguntas = $request->input('preguntas');
-        $proyecto->hipotesis = $request->input('hipotesis');
-        $proyecto->metodologia = $request->input('metodologia');
-        $proyecto->generacion_conocimiento = $request->input('generacion_conocimiento');
         $proyecto->actividades_divulgacion = $request->input('actividades_divulgacion');
         $proyecto->actividades_vinculacion = $request->input('actividades_vinculacion');
         $proyecto->vinculacion_otros_investigadores = $request->input('vinculacion_otros_investigadores');
         $proyecto->vinculacion_grupos_investigacion = $request->input('vinculacion_grupos_investigacion');
         $proyecto->vinculacion_sectores = $request->input('vinculacion_sectores');
-        //Subida del archivo proyecto en extenso
+
         $extenso = $request->file('proyecto_extenso');
         if($extenso){
             $extenso_path = time().$extenso->getClientOriginalName();
             \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
             $proyecto->proyecto_extenso = $extenso_path;
+        }
+
+        $extenso = $request->file('cronograma');
+        if($extenso){
+            $extenso_path = time().$extenso->getClientOriginalName();
+            \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
+            $proyecto->cronograma = $extenso_path;
+        }
+
+        $extenso = $request->file('anexos');
+        if($extenso){
+            $extenso_path = time().$extenso->getClientOriginalName();
+            \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
+            $proyecto->anexos = $extenso_path;
         }
 
 

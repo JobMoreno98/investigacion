@@ -17,15 +17,15 @@
         @endif
     </div>
     <br>
-    <div class="row">
-        <div class="col-md-6 offset-3 col-xs-12">
+    <div class="row justify-content-center">
+        <div class="col-md-6col-xs-12">
             <h4>Folio: {{$proyecto->id}}. Año: {{$proyecto->anio}}. A.1 {{$proyecto->titulo_proyecto}}</h4>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 col-xs-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     Datos del Responsable
                 </div>
                 <div class="card-body">
@@ -215,16 +215,28 @@
                             <br><b>B.15 Vinculación con sectores de la sociedad civil o instituciones gubernamentales: </b>{{$proyecto->vinculacion_sectores}}
                         </div>
                         <div class="col-md-12 col-xs-12">
-                            <br><b>B.15 Criterios Éticos: </b>{{$proyecto->criterios_eticos}}
+                            <br><b>B.16 Criterios Éticos: </b>{{$proyecto->criterios_eticos}}
                         </div>
                         <div class="col-md-12 col-xs-12">
-                            <br><b>B.15 Referencias: </b>{{$proyecto->referencias}}
+                            <br><b>B.17 Referencias: </b>{{$proyecto->referencias}}
+                        </div>
+                        
+                        <div class="col-md-12 col-xs-12">
+                            <br><b>B.18 Anexos: </b>
+                            @if(!is_null($proyecto->anexos) && isset($proyecto->anexos))
+                                <a href="{{route('documento',['filename' =>$proyecto->anexos])}}" target="_blank" download>Ver Documento</a>
+                                @else
+                                <h5>No se subió documento</h5>
+                                @endif
                         </div>
                         <div class="col-md-12 col-xs-12">
-                            <br><b>B.15 Anexos: </b>{{$proyecto->anexos}}
+                            <b>Cronograma</b>
+                            @if(!is_null($proyecto->cronograma) && isset($proyecto->cronograma))
+                                <a href="{{route('documento',['filename' =>$proyecto->cronograma])}}" target="_blank" download>Ver Documento</a>
+                                @else
+                                <h5>No se subió documento</h5>
+                                @endif
                         </div>
-                        <div class="col-md-12 col-xs-12">
-                            <br><b>B.15 Cronograma: </b><a href="{{route('documento',['filename' =>$proyecto->proyecto_extenso])}}" target="_blank" download>Ver Documento</a>                        </div>
                     </div>
                 </div>
             </div>

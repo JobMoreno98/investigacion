@@ -267,7 +267,7 @@
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
                         <label for="anexos">B.13 Anexos *</label>
-                        <input type="file" class="form-control" id="anexos" name="cronograma" value="{{old('anexos')}}" >
+                        <input type="file" class="form-control" id="anexos" name="anexos" value="{{old('anexos')}}" >
                     </div>
                 </div>
                 <br>
