@@ -113,7 +113,6 @@
                     <tr><td><b>B.8 Hipótesis: </b> {{$proyecto->hipotesis}}</td></tr>
                     <tr><td><b>B.9 Metodología: </b>{{$proyecto->metodologia}}</td></tr>
                     <tr><td><b>B.9 Justificación: </b>{{$proyecto->justificacion_proyecto}}</td></tr>
-                    <tr><td><b>B.9 Anexos: </b>{{$proyecto->anexos}}</td></tr>
                     <tr><td><b>B.9 Referencias: </b>{{$proyecto->referencias}}</td></tr>
                     <tr><td><b>B.9.1 Cómo considera el proyecto Generación de Conocimiento o de Incidencia: </b>{{$proyecto->generacion_conocimiento}}</td></tr>
                     <tr><td><b>B.10 Actividades de divulgación previstas: </b> {{$proyecto->actividades_divulgacion}}</td></tr>

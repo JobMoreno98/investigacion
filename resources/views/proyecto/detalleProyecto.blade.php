@@ -230,7 +230,7 @@
                                 @endif
                         </div>
                         <div class="col-md-12 col-xs-12">
-                            <b>Cronograma</b>
+                            <b>B. 19 Cronograma: </b>
                             @if(!is_null($proyecto->cronograma) && isset($proyecto->cronograma))
                                 <a href="{{route('documento',['filename' =>$proyecto->cronograma])}}" target="_blank" download>Ver Documento</a>
                                 @else
