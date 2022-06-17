@@ -98,7 +98,6 @@ class ProyectoController extends Controller
         $proyecto->tipo_proyecto = $request->input('tipo_proyecto');
         $proyecto->criterios_eticos = $request->input('criterios_eticos');
         $proyecto->referencias = $request->input('referencias');
-        $proyecto->anexos = $request->input('anexos');
         $proyecto->monto_pasaje_aereo_nacional = $request->input('monto_pasaje_aereo_nacional');
         $proyecto->monto_pasaje_terrestre_nacional = $request->input('monto_pasaje_terrestre_nacional');
         $proyecto->monto_combustible_vehiculo = $request->input('monto_combustible_vehiculo');
@@ -123,6 +122,22 @@ class ProyectoController extends Controller
             $extenso_path = time().$extenso->getClientOriginalName();
             \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
             $proyecto->proyecto_extenso = $extenso_path;
+        }
+        
+
+        $extenso = $request->file('cronograma');
+        if($extenso){
+            $extenso_path = time().$extenso->getClientOriginalName();
+            \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
+            $proyecto->cronograma = $extenso_path;
+        }
+        
+
+        $extenso = $request->file('anexos');
+        if($extenso){
+            $extenso_path = time().$extenso->getClientOriginalName();
+            \Storage::disk('documentos')->put($extenso_path, \File::get($extenso));
+            $proyecto->anexo = $extenso_path;
         }
         
 

@@ -266,14 +266,14 @@
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="anexos">B.13 Anexos (máximo 500 caracteres) *</label>
-                        <textarea class="form-control" id="anexos" name="anexos" required>{{old('anexos')}}</textarea>
+                        <label for="anexos">B.13 Anexos *</label>
+                        <input type="file" class="form-control" id="anexos" name="cronograma" value="{{old('anexos')}}" >
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-6">
-                        <label for="cronograma"> B.14 Cronograma de trabajo</label>
+                        <label for="cronograma"> B.14 Cronograma de trabajo *</label>
                         <input type="file" class="form-control" id="cronograma" name="cronograma" value="{{old('cronograma')}}" >
                     </div>
                 </div>
