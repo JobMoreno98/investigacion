@@ -42,6 +42,7 @@
                         <select class="form-control" id="anio" name="anio">
                             <option value="No aplica" selected>No aplica</option>
                             <option value="2021">2021</option>
+                            <option value="2021">2022</option>
                         </select>
                     </div>
                     <div class="col-md-5">
@@ -330,56 +331,56 @@
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="personal_adscrito">B.11 Personal adscrito al proyecto. Señalar nombre y Departamento de Adscripción</label>
+                        <label for="personal_adscrito">B.15 Personal adscrito al proyecto. Señalar nombre y Departamento de Adscripción</label>
                         <textarea class="form-control" id="personal_adscrito" name="personal_adscrito">{{old('personal_adscrito')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="estudiantes_adscritos">B.12 Estudiantes colaboradores o asistentes al proyecto (especificar nombre y programa educativo del estudiante)</label>
+                        <label for="estudiantes_adscritos">B.16 Estudiantes colaboradores o asistentes al proyecto (especificar nombre y programa educativo del estudiante)</label>
                         <textarea class="form-control" id="estudiantes_adscritos" name="estudiantes_adscritos">{{old('estudiantes_adscritos')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="colaboradores_externos">B.13 Colaboradores o asistentes al proyecto, externos de la UdeG (especificar nombre e institución)</label>
+                        <label for="colaboradores_externos">B.17 Colaboradores o asistentes al proyecto, externos de la UdeG (especificar nombre e institución)</label>
                         <textarea class="form-control" id="colaboradores_externos" name="colaboradores_externos">{{old('colaboradores_externos')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="actividades_divulgacion">B.14 Actividades de divulgación previstas</label>
+                        <label for="actividades_divulgacion">B.18 Actividades de divulgación previstas</label>
                         <textarea class="form-control" id="actividades_divulgacion" name="actividades_divulgacion">{{old('actividades_divulgacion')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="actividades_vinculacion">B.13 Actividades de vinculación previstas</label>
+                        <label for="actividades_vinculacion">B.19 Actividades de vinculación previstas</label>
                         <textarea class="form-control" id="actividades_vinculacion" name="actividades_vinculacion">{{old('actividades_vinculacion')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="vinculacion_otros_investigadores"> B.15 Vinculación con otros investigadores, especifique</label>
+                        <label for="vinculacion_otros_investigadores"> B.20 Vinculación con otros investigadores, especifique</label>
                         <textarea class="form-control" id="vinculacion_otros_investigadores" name="vinculacion_otros_investigadores">{{old('vinculacion_otros_investigadores')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="vinculacion_grupos_investigacion"> B.16 Vinculación con otros grupos de investigación, especifique</label>
+                        <label for="vinculacion_grupos_investigacion"> B.21 Vinculación con otros grupos de investigación, especifique</label>
                         <textarea class="form-control" id="vinculacion_grupos_investigacion" name="vinculacion_grupos_investigacion">{{old('vinculacion_grupos_investigacion')}}</textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
-                        <label for="vinculacion_sectores"> B.17 Vinculación con sectores de la sociedad civil o instituciones gubernamentales, especifique</label>
+                        <label for="vinculacion_sectores"> B.22 Vinculación con sectores de la sociedad civil o instituciones gubernamentales, especifique</label>
                         <textarea class="form-control" id="vinculacion_sectores" name="vinculacion_sectores">{{old('vinculacion_sectores')}}</textarea>
                     </div>
                 </div>

@@ -13,6 +13,7 @@ class PDFController extends Controller
 {
     public function imprimirProyecto($proyecto_id){
      $proyecto = VsProyecto::where('id','=',$proyecto_id)->first();
+     return $proyecto;
         $pdf = \PDF::loadView('proyecto.formatoProyecto', compact('proyecto'));
         return $pdf->stream('formatoProyecto.pdf');
 
