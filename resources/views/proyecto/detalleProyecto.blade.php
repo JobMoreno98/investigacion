@@ -223,15 +223,16 @@
                         
                         <div class="col-md-12 col-xs-12">
                             <br><b>B.18 Anexos: </b>
-                            @if(!is_null($proyecto->anexos) && isset($proyecto->anexos))
+                            @if(!is_null($proyecto->anexos) && isset($proyecto->anexos) && $proyecto->anexos != 'No aplica para la convocatoria')
                                 <a href="{{route('documento',['filename' =>$proyecto->anexos])}}" target="_blank" download>Ver Documento</a>
                                 @else
                                 <h5>No se subió documento</h5>
                                 @endif
                         </div>
+                        <br>
                         <div class="col-md-12 col-xs-12">
                             <b>B. 19 Cronograma: </b>
-                            @if(!is_null($proyecto->cronograma) && isset($proyecto->cronograma))
+                            @if(!is_null($proyecto->cronograma) && isset($proyecto->cronograma) && $proyecto->cronograma != 'No aplica para la convocatoria')
                                 <a href="{{route('documento',['filename' =>$proyecto->cronograma])}}" target="_blank" download>Ver Documento</a>
                                 @else
                                 <h5>No se subió documento</h5>
