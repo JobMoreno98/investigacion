@@ -175,6 +175,10 @@
                     </div>
                 </div>
                 <br>
+
+
+
+
                 <div class="row g-3 align-items-center">
                     <div class="row g-3 align-items-center">
                         <div class="col-md-12">
@@ -209,6 +213,18 @@
                     </div>
                 </div>
                 <br>
+                
+                @if (isset($proyecto->justificacion_proyecto))
+                <br>
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-12">
+                        <label for="justificacion_proyecto">B.5 Justificación (máximo 500 caracteres) *</label>
+                        <textarea class="form-control" id="justificacion_proyecto" name="justificacion_proyecto" required>{{$proyecto->justificacion_proyecto}}</textarea>
+                    </div>
+                </div>
+                @endif
+
+                <br>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-6">
                         <label for="tipo_proyecto">B.5 Tipo de Proyecto</label>
@@ -219,7 +235,9 @@
                             <option value="Continuacion">Continuación</option>
                         </select>
                     </div>
-                    @if (isset($proyecto->tiempo_proyecto))
+                    @if (isset())
+                        
+                    @endif
                     <div class="col-md-6">
                         <label for="tiempo_proyecto">B.5.1 Tiempo</label>
                         <select class="form-control" id="tiempo_proyecto" name="tiempo_proyecto">
@@ -231,10 +249,6 @@
                             <option value="Mas de 3 años">Más de tres años</option>
                         </select>
                     </div>
-                    @else
-                    No aplica para la convocatoria
-                    @endif
-
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
@@ -292,7 +306,7 @@
                                 <td><input type="number" step="any" min="0" class="form-control" id="monto_combustible_vehiculo" name="monto_combustible_vehiculo" value="{{$proyecto->monto_combustible_vehiculo}}"></td>
                             </tr>
                             <tr>
-                                <td><label for="monto_viaticos">B.10.4 Monto para viáticos (Hotel, alimentos)</label></td>
+                                <td><label for="monto_viaticos">B.10.4 Monto para viáticos (Hotel, alimentos e inscripcion de congreso)</label></td>
                                 <td><input type="number" step="any" min="0" class="form-control" id="monto_viaticos" name="monto_viaticos" value="{{$proyecto->monto_viaticos}}"></td>
                             </tr>
                             <tr>

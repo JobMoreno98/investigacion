@@ -37,12 +37,12 @@
                     </div>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <label for="anio">Año*</label>
                         <select class="form-control" id="anio" name="anio">
-                            <option value="No aplica" selected>No aplica</option>
+                            <option value="" selected>Selecciona una opción</option>
                             <option value="2021">2021</option>
-                            <option value="2021">2022</option>
+                            <option value="2022">2022</option>
                         </select>
                     </div>
                     <div class="col-md-5">
@@ -50,7 +50,7 @@
                         <input type="hidden" class="form-control" id="IdUser" name="IdUser" value="{{Auth::user()->id}}" readonly >
                         <input type="text" class="form-control" id="nombre_responsable" name="nombre_responsable" value="{{old('nombre_responsable')}}" required>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <label for="correo_responsable">A.2 Correo electrónico *</label>
                         <input type="email" class="form-control" id="correo_responsable" name="correo_responsable" value="{{old('correo_responsable')}}" required>
                     </div>
@@ -301,7 +301,7 @@
                                 <td><input type="number" step="any" min="0" class="form-control" id="monto_combustible_vehiculo" name="monto_combustible_vehiculo" value="0" required></td>
                             </tr>
                             <tr>
-                                <td><label for="monto_viaticos">B.10.4 Monto para viáticos (Hotel, alimentos e inscripcion de congreso) </label></td>
+                                <td><label for="monto_viaticos">B.10.4 Monto para viáticos (Hotel, alimentos) </label></td>
                                 <td><input type="number" step="any" min="0" class="form-control" id="monto_viaticos" name="monto_viaticos" value="0" required></td>
                             </tr>
                             <tr>
@@ -405,9 +405,9 @@
             <br>
             <div class="row g-3 align-items-center">
                 <br>
-                <h5>En caso de tener alguna duda, contactar a la Coordinación de Investigación  con el correo electrónico: ofelia.woo@academicos.udg.mx</h5>
+                <h5>En caso de tener alguna duda, contactar a la Coordinación de Investigación  con el correo electrónico: investigación.cuch@sdministrativos.udg.mx</h5>
                 <hr>
-                <p>Secretaría Académica / Coordinación de investigación</p>
+                <p>Secretaría Académica / Coordinación de investigación al teléfono 3338193300 ext. 23499, 23590, 23402.</p>
                 <p>CUCSH</p>
             </div>
     </div>
