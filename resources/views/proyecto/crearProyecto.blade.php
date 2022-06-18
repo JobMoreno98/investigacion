@@ -405,7 +405,7 @@
             <br>
             <div class="row g-3 align-items-center">
                 <br>
-                <h5>En caso de tener alguna duda, contactar a la Coordinación de Investigación  con el correo electrónico: investigación.cuch@sdministrativos.udg.mx</h5>
+                <h5>En caso de tener alguna duda, contactar a la Coordinación de Investigación  con el correo electrónico: investigación.cuch@administrativos.udg.mx</h5>
                 <hr>
                 <p>Secretaría Académica / Coordinación de investigación al teléfono 3338193300 ext. 23499, 23590, 23402.</p>
                 <p>CUCSH</p>
