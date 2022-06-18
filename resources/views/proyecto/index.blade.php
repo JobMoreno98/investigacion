@@ -101,7 +101,7 @@
                 <h1>Falta especificar rol</h1>
             @endif
             <br>
-            @if(Auth::user()->role != 'admin' && Auth::user()->role != 'evaluador' && $numero_proyectos->cuenta_proyectos == 0 && $role->role != 'evaluador')
+            @if(Auth::user()->role != 'admin' && Auth::user()->role != 'evaluador' && $role->role != 'evaluador')
                   <p class="text-center"><a href="{{ route('proyectos.create') }}" class="btn btn-success">Capturar Nuevo Proyecto </a></p>
             @endif
             <br>
