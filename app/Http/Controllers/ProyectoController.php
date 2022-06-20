@@ -191,7 +191,6 @@ class ProyectoController extends Controller
             'fecha_inicio'=>'required',
             'fecha_fin'=>'required',
             'tipo_proyecto'=>'required',
-            'tiempo_proyecto'=>'required',
             'objetivos'=>'required',
             'preguntas'=>'required',
             'metodologia'=>'required'
