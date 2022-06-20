@@ -12,7 +12,7 @@
             <h2>Convocatoria de Registro a proyectos de investigación </h2>
             <hr>
         </div>
-        <form action="{{route('proyectos.store')}}" method="post" enctype="multipart/form-data" class="col-12">
+        <form action="{{route('proyectos.edit')}}" method="post" enctype="multipart/form-data" class="col-12">
             <div class="row align-items-center">
                 <div class="col">
                     {!! csrf_field() !!}
@@ -212,7 +212,7 @@
             <div class="row g-3 align-items-center">
                 <div class="col-md-12">
                     <label for="justificacion_proyecto">B.5 Justificación (máximo 500 caracteres) *</label>
-                    <textarea class="form-control" id="justificacion_proyecto" name="justificacion_proyecto" required>{{$proyecto->justificacion_proyecto}}</textarea>
+                    <textarea class="form-control" id="justificacion_proyecto" name="  " required>{{$proyecto->justificacion_proyecto}}</textarea>
                 </div>
             </div>
             <br>
@@ -327,7 +327,7 @@
                 <div class="row g-3 align-items-center">
                     <div class="col-md-12">
                         <label for="justificacion">B.14.8 Justificación de Presupuesto</label>
-                        <textarea class="form-control" id="justificacion" name="justificacion" value="{{old('justificacion')}}"></textarea>
+                        <textarea class="form-control" id="justificacion" name="justificacion" value="{{$proyecto->justificacion}}"></textarea>
                     </div>
                 </div>
                 <hr>
@@ -397,7 +397,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="proyecto_extenso">C.1 Proyecto en extenso </label>
-                    <input type="file" class="form-control" id="proyecto_extenso" name="proyecto_extenso" value="{{$proyecto->proyecto_extenso}}" >
+                    <input type="file" class="form-control" id="proyecto_extenso" name="proyecto_extenso"  required>
                 </div>
             </div>
             <br>
