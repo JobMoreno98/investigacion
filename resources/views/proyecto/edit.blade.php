@@ -214,7 +214,7 @@
             <div class="row g-3 align-items-center">
                 <div class="col-md-12">
                     <label for="justificacion_proyecto">B.5 Justificación (máximo 500 caracteres) *</label>
-                    <textarea class="form-control" id="justificacion_proyecto" name="  " required>{{$proyecto->justificacion_proyecto}}</textarea>
+                    <textarea class="form-control" id="justificacion_proyecto" name="justificacion_proyecto" required>{{$proyecto->justificacion_proyecto}}</textarea>
                 </div>
             </div>
             <br>

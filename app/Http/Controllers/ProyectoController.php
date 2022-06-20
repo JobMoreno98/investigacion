@@ -196,6 +196,7 @@ class ProyectoController extends Controller
             'metodologia'=>'required'
         ]);
         $proyecto = Proyecto::find($id);
+        
         $proyecto->anio = $request->input('anio');
         $proyecto->IdUsuario = $request->input('IdUser');
         $proyecto->evaluador_id = 268;
