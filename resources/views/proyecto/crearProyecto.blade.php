@@ -321,7 +321,7 @@
                     <div class="row g-3 align-items-center">
                         <div class="col-md-12">
                             <label for="justificacion">B.10.8 Justificación de Presupuesto</label>
-                            <textarea class="form-control" id="justificacion" name="justificacion" value="{{old('justificacion')}}"></textarea>
+                            <textarea class="form-control" id="justificacion" name="justificacion" value="0"></textarea>
                         </div>
                     </div>
                     <hr>

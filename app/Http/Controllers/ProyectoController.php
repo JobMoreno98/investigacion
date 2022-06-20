@@ -70,7 +70,7 @@ class ProyectoController extends Controller
             'preguntas'=>'required',
             'metodologia'=>'required'
         ]);
-
+        //return $request;
         $proyecto = new Proyecto();
         $proyecto->anio = $request->input('anio');
         $proyecto->IdUsuario = $request->input('IdUser');
@@ -231,6 +231,7 @@ class ProyectoController extends Controller
         $proyecto->monto_materiales = $request->input('monto_materiales');
         $proyecto->monto_total = $request->input('monto_total');
         $proyecto->justificacion = $request->input('justificacion');
+        $proyecto->justificacion_proyecto = $request->input('justificacion_proyecto');
         $proyecto->personal_adscrito = $request->input('personal_adscrito');
         $proyecto->estudiantes_adscritos = $request->input('estudiantes_adscritos');
         $proyecto->colaboradores_externos = $request->input('colaboradores_externos');

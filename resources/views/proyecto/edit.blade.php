@@ -12,7 +12,7 @@
             <h2>Convocatoria de Registro a proyectos de investigación </h2>
             <hr>
         </div>
-        <form action="{{route('proyectos.edit')}}" method="post" enctype="multipart/form-data" class="col-12">
+        <form action="{{route('proyectos.update', $proyecto->id)}}" method="post" enctype="multipart/form-data" class="col-12">
             <div class="row align-items-center">
                 <div class="col">
                     {!! csrf_field() !!}
