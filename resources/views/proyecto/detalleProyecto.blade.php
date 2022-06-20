@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-12 col-xs-12">
             <div class="card">
-                <div class="card-header bg-dark text-white">
+                <div class="card-header">
                     Datos del Responsable
                 </div>
                 <div class="card-body">
@@ -231,7 +231,7 @@
                         </div>
                         <br>
                         <div class="col-md-12 col-xs-12">
-                            <b>B. 19 Cronograma: </b>
+                            <br> <b>B. 19 Cronograma: </b>
                             @if(!is_null($proyecto->cronograma) && isset($proyecto->cronograma) && strcmp($proyecto->cronograma,'no aplica'))
                                 <a href="{{route('documento',['filename' =>$proyecto->cronograma])}}" target="_blank" download>Ver Documento</a>
                                 @else
@@ -270,7 +270,7 @@
     <div class="row">
         <div class="col-md-6 col-xs-12">
             <p><a href="{{ route('proyectos.index') }}" class="btn btn-secondary">Regresar</a>
-                @if($proyecto->definitivo=='No' && Auth::user()->role != 'admin' && Auth::user()->role != 'evaluador')
+                @if($proyecto->definitivo == 'No' && Auth::user()->role != 'admin' && Auth::user()->role != 'evaluador')
                 <a href="{{ route('proyectos.edit', $proyecto->id) }}" class="btn btn-primary">Editar Proyecto</a>
             </p>
             @endif
