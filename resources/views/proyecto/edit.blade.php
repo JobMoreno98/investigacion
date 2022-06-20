@@ -13,6 +13,7 @@
             <hr>
         </div>
         <form action="{{route('proyectos.update', $proyecto->id)}}" method="post" enctype="multipart/form-data" class="col-12">
+            @method('PUT')
             <div class="row align-items-center">
                 <div class="col">
                     {!! csrf_field() !!}
@@ -147,9 +148,10 @@
             <div class="row g-3 align-items-center">
                 <div class="col-md-6">
                     <label for="tipo_registro">A.10 Opción de registro *</label>
-                    <select class="form-control" id="tipo_registro" name="tipo_registro" class="form-control" onChange="cambio()">
-                        <option {{($proyecto->tipo_registro == 'Registro') ? 'selected' : ''}} value="Registro" >Registro sin apoyo económico</option>
-                        <option {{($proyecto->tipo_registro == 'Registro y apoyo') ? 'selected' : ''}} value="Registro y apoyo">Registro con apoyo económico</option>
+                    <select class="form-control" id="tipo_registro" name="tipo_registro" class="form-control" onChange="cambio()" required>
+                        <option value="">Selecciona una opcion</option>
+                        <option  value="Registro" >Registro sin apoyo económico</option>
+                        <option  value="Registro y apoyo">Registro con apoyo económico</option>
                     </select>
                 </div>
                 <div class="col-md-6">
