@@ -271,7 +271,6 @@
         <div class="col-md-6 col-xs-12">
             <p><a href="{{ route('proyectos.index') }}" class="btn btn-secondary">Regresar</a>
                 @if($proyecto->definitivo == 'No' && Auth::user()->role != 'admin' && Auth::user()->role != 'evaluador')
-            {{$proyecto->id}}
                 <a href="{{ route('proyectos.edit', $proyecto->id) }}" class="btn btn-primary">Editar Proyecto</a>
             </p>
             @endif
