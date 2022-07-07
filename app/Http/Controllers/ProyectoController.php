@@ -30,12 +30,12 @@ class ProyectoController extends Controller
             $proyectos = VsProyecto::where('activo','=','1')->where('evaluador_id','=',Auth::user()->id)->get();
             return view('proyecto.index')->with('proyectos', $proyectos)->with('role',$role);
         }elseif(Auth::user()->role == 'admin'){
-            $proyectos = VsProyecto::where('activo','=','1')->get();
+            $proyectos = VsProyecto::where('activo','=','1')->where('anio','2022')->get();
             return view('proyecto.index')->with('proyectos', $proyectos)->with('evaluadores', $evaluadores)->with('role',$role);
-        }elseif (Auth::user()->role == 'investigador-evaluador'){
-            $role->role = 'investigador';
+        }elseif (Auth::user()->role == 'investigador,evaluador'){
+            $role->role = 'investigador,evaluador';
             $proyectos = VsProyecto::where('activo','=','1')->where('IdUsuario','=',Auth::user()->id)->get();
-            $numero_proyectos = DB::table('vs_proyectos')->select(DB::raw('COUNT(*) as cuenta_proyectos'))->where('IdUsuario','=',Auth::user()->id)->first();
+            $numero_proyectos = DB::table('proyectos')->select(DB::raw('COUNT(*) as cuenta_proyectos'))->where('IdUsuario','=',Auth::user()->id)->first();
             return view('proyecto.index')->with('proyectos', $proyectos)->with('numero_proyectos', $numero_proyectos)->with('role',$role);
         }else{
             return view('home');
@@ -307,7 +307,7 @@ class ProyectoController extends Controller
         $proyecto->evaluador_id = $request->input('evaluador_id');
         $proyecto->update();
 
-        return redirect()->route('proyectos.index')->with(array(
+        return redirect()->route('index-general')->with(array(
             "message" => "Se ha asignado el evaluador correctamente. Folio: ".$proyecto_id
         ));
     }
@@ -326,7 +326,7 @@ class ProyectoController extends Controller
 
     public function index_general()
     {
-        $evaluadores = User::where('role','=','evaluador')->get();
+        $evaluadores = User::where('role','like','%evaluador')->get();
 
         if(Auth::user()->role == 'investigador'){
             $proyectos = VsProyecto::where('activo','=','1')->where('IdUsuario','=',Auth::user()->id)->get();
@@ -336,7 +336,7 @@ class ProyectoController extends Controller
             $proyectos = VsProyecto::where('activo','=','1')->where('evaluador_id','=',Auth::user()->id)->get();
             return view('proyecto.indexGeneral')->with('proyectos', $proyectos);
         }elseif(Auth::user()->role == 'admin'){
-            $proyectos = VsProyecto::where('activo','=','1')->get();
+            $proyectos = VsProyecto::where('activo','=','1')->where('anio','2022')->get();
             return view('proyecto.indexGeneral')->with('proyectos', $proyectos)->with('evaluadores', $evaluadores);
         }else{
             return view('home');

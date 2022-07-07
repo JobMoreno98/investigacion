@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class VsProyecto extends Model
 {
     use HasFactory;
-    protected $table = 'proyectos';
+    protected $table = 'vs_proyectos';
 }

@@ -91,7 +91,7 @@
                 <h2>Listado de proyectos registrados como Investigador(a) </h2>
             @elseif(Auth::user()->role == 'evaluador')
                     <h2>Listado de proyectos registrados a Evaluar </h2>
-            @elseif(Auth::user()->role == 'investigador-evaluador')
+            @elseif(Auth::user()->role == 'investigador,evaluador')
                 @if($role->role == 'investigador')
                     <h2>Listado de proyectos registrados como Investigador(a) </h2>
                 @elseif($role->role == 'evaluador')
@@ -120,7 +120,13 @@
                     @if(Auth::user()->role != 'evaluador' || $role->role != 'evaluador')
                         <th>Proyecto en extenso</th>
                     @endif
-                    <th>Proyecto</th>
+
+                    @if (Auth::user()->role == 'evaluador')
+                        <th>Proyecto </th>
+                    @endif
+                        
+
+                    
                     <th>Estatus</th>
                 </tr>
                 </thead>
@@ -175,7 +181,7 @@
                                 <b>Tipo de Proyecto: </b>{{$proyecto->tipo_proyecto}}.
                                 <br><b>Tiempo: </b>{{$proyecto->tiempo_proyecto}}.
                                 <br>Para ver el detalle completo del proyecto presione <b><a href="{{ route('proyectos.show', $proyecto->id) }}">aquí</a></b>.
-                            @elseif(Auth::user()->role == 'evaluador' || Auth::user()->role == 'investigador' ||  Auth::user()->role == 'investigador-evaluador')
+                            @elseif(Auth::user()->role == 'evaluador' || Auth::user()->role == 'investigador' ||  Auth::user()->role == 'investigador,evaluador')
                                 <b>Abstract: </b>{{$proyecto->abstract}}.
                                 <br><b>Tipo de Proyecto: </b>{{$proyecto->tipo_proyecto}}.
                                 <br><b>Tiempo: </b>{{$proyecto->tiempo_proyecto}}.
@@ -187,17 +193,19 @@
                                 <br><b>Actividades de vinculación: </b>{{$proyecto->actividades_vinculacion}}.
                             @endif
                         </td>
-                        @if(Auth::user()->role != 'evaluador' || $role->role != 'evaluador')
+                        @if(Auth::user()->role != 'evaluador' || $role->role != 'investigador')
                             @if(!is_null($proyecto->proyecto_extenso) && isset($proyecto->proyecto_extenso))
                                 <td width="5%"><h5><a href="{{route('documento',['filename' =>$proyecto->proyecto_extenso])}}" target="_blank" download>Ver</a></h5></td>
                             @else
                                 <td width="5%"><h5>No se subió documento</h5></td>
                             @endif
                         @endif
-                        @if(!is_null($proyecto->proyecto_testado) && isset($proyecto->proyecto_testado))
-                            <td width="5%"><h5><a href="{{route('documento-testado',['filename' =>$proyecto->proyecto_testado])}}" target="_blank" download>Ver</a></h5></td>
-                        @else
-                            <td width="5%"><h5>No se subió documento</h5></td>
+                        @if(!is_null($proyecto->proyecto_testado) && isset($proyecto->proyecto_testado) && $proyecto->anio == 2021)
+                            <td width="5%"><h5><a href="{{route('documento-testado',['filename' =>$proyecto->proyecto_testado])}}" target="_blank" download>Ver</a></h5> {{(isset($proyecto->proyecto_testado))? 'tiene':'no tiene' }} {{$proyecto->anio}}</td>
+                            
+                        {{--@else
+                            <td width="5%"><h5>No se subió documento</h5> {{(isset($proyecto->proyecto_testado))? 'tiene':'no tiene'}}</td>--}}
+                            
                         @endif
                         <td width="5%">
                             @if(Auth::user()->role == 'evaluador' || $role->role == 'evaluador')
@@ -305,8 +313,6 @@
                                         <p><a class="btn btn-dark" role="button" href="{{route('imprimir-evaluacion',$proyecto->id)}}">Imprimir Evaluación</a></p>
                                     @endif
                                 @endif
-
-
                         </td>
 
 

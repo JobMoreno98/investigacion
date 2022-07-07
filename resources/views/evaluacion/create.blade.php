@@ -14,11 +14,12 @@
                     CONVOCATORIA PARA PROYECTOS DE INVESTIGACIÓN 2021
                 </h3>
                 <h4>Número de Folio del Proyecto: {{$proyecto_id}}</h4><br>
-                <h5>La exposición de motivos hasta 400 caracteres. IMPORTANTE!!! USAR CHROME (GOOGLE) O FIREFOX PARA LLENAR ESTE FORMATO.</h5>
+                <h5>La exposición de motivos hasta 400 caracteres. <br/><b>IMPORTANTE</b> USAR CHROME (GOOGLE) O FIREFOX PARA LLENAR ESTE FORMATO.</h5>
+                <h5><b>Favor de indicar si cumple o no cumple las siguientes condiciones:</b></h5>
                 </div>
                 <hr>
             </div>
-            <form action="{{route('evaluaciones.store')}}" method="post" enctype="multipart/form-data" class="col-12">
+     <!--       <form action="{{route('evaluaciones.store')}}" method="post" enctype="multipart/form-data" class="col-12">
                 <div class="row">
                     <div class="col">
                         {!! csrf_field() !!}
@@ -283,6 +284,17 @@
                 </div>
                 </div>
                 <br>
+
+            </form>
+        -->
+
+            <form action="" class="row" method="post">  
+                @csrf
+                @method('put')
+                <div class="col-sm-12 col-md-6">
+                    <label for="" class="form-label">Queda explicito </label>
+                    <input type="text" class="form-control" placeholder="">
+                </div>
 
             </form>
 

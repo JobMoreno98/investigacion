@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Proyectos de Investigación') }}</title>
+    <title>Proyectos de Investigación</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -122,7 +122,7 @@
                                     </td>
                                 @endif
                                 <td width="20%"><b>Tipo de Proyecto: </b>{{$proyecto->tipo_proyecto}}.</td>
-                                <td width="20%"><b>Nombre: </b>{{$proyecto->evaluador_nombre}}</td>
+                                <td width="20%"><b>Nombre: </b>{{$proyecto->evaluador_nombre}}</td>                                
                                 <td width="5%">
                                     @if(Auth::user()->role == 'evaluador')
                                         @if(is_null($proyecto->IdProyecto))
@@ -200,7 +200,6 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <label for="proyecto"><b>Titulo: </b>{{$proyecto->titulo_proyecto}}</label>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h4>X</h4></button>
                                                     </div>
                                                     <div class="modal-body">
 
@@ -218,7 +217,7 @@
 
                                                             <div class="modal-footer">
                                                                 <button type="submit" name="Enviar" class="btn btn-success">Asignar</button>
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -262,13 +261,39 @@
 
     </script>
     <script>
-       
+        jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+            "portugues-pre": function ( data ) {
+                var a = 'a';
+                var e = 'e';
+                var i = 'i';
+                var o = 'o';
+                var u = 'u';
+                var c = 'c';
+                var special_letters = {
+                    "Á": a, "á": a, "Ã": a, "ã": a, "À": a, "à": a,
+                    "É": e, "é": e, "Ê": e, "ê": e,
+                    "Í": i, "í": i, "Î": i, "î": i,
+                    "Ó": o, "ó": o, "Õ": o, "õ": o, "Ô": o, "ô": o,
+                    "Ú": u, "ú": u, "Ü": u, "ü": u,
+                    "ç": c, "Ç": c
+                };
+                for (var val in special_letters)
+                    data = data.split(val).join(special_letters[val]).toLowerCase();
+                return data;
+            },
+            "portugues-asc": function ( a, b ) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+            "portugues-desc": function ( a, b ) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        } );
         //"columnDefs": [{ type: 'portugues', targets: "_all" }],
 
         $(document).ready(function() {
             $('#example').DataTable( {
 
-                "order": [[ 0, "asc" ]],
+                "order": [[ 0, "desc" ]],
                 "language": {
                     "sProcessing": "Procesando...",
                     "sLengthMenu": "Mostrar _MENU_ registros",
