@@ -37,10 +37,30 @@ class EvaluacionController extends Controller
     public function store(Request $request)
     {
         $validateData = $this->validate($request,[
-            'propuesta_calificacion'=>'required',
-            'propuesta_motivos_calificacion'=>'required'
-        ]);
-        $evaluacion = new Evaluacion();
+            'p_01'=>'required',
+            'm_p_01'=>'required',
+            'p_02'=>'required',
+            'm_p_02'=>'required',
+            'p_03'=>'required',
+            'm_p_03'=>'required',
+            'p_04'=>'required',
+            'm_p_04'=>'required',
+            'p_05'=>'required',
+            'm_p_05'=>'required',
+            'p_06'=>'required',
+            'm_p_06'=>'required',
+            'p_07'=>'required',
+            'm_p_07'=>'required',
+            'p_08'=>'required',
+            'm_p_08'=>'required',
+            'p_09'=>'required',
+            'm_p_09'=>'required',
+            'p_10'=>'required',
+            'm_p_10'=>'required',
+            ]);
+        return $request;
+
+       /* $evaluacion = new Evaluacion();
         $evaluacion->IdProyecto = $request->input('IdProyecto');
         $evaluacion->propuesta_calificacion = $request->input('propuesta_calificacion');
         $evaluacion->propuesta_motivos_calificacion = $request->input('propuesta_motivos_calificacion');
@@ -61,7 +81,17 @@ class EvaluacionController extends Controller
         $evaluacion->fecha_evaluacion = $request->input('fecha_evaluacion');
         $evaluacion->nombre_evaluador = $request->input('nombre_evaluador');
         $evaluacion->codigo_evaluador = $request->input('codigo_evaluador');
-        $evaluacion->save();
+        $evaluacion->save();*/
+
+        Evaluacion::create([
+            'IdProyecto' => $request->input('IdProyecto'),
+            'propuesta_calificacion' => $request->propuesta_calificacion,
+            'propuesta_motivos_calificacion' => $request->conocimiento,
+            'conocimiento_calificacion' => $request->conocimiento_calificacion,
+            
+
+
+        ]);
         return redirect('proyectos')->with(array(
             'message'=>'La Evaluación se guardo Correctamente'
         ));
