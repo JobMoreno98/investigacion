@@ -54,8 +54,8 @@
                                 </select>
                             </div>
                             <div class="col-md-8">
-                                <label for="conocimiento">Argumente *</label>
-                                <textarea class="form-control" id="conocimiento" name="conocimiento" required>{{ old('conocimiento') }}</textarea>
+                                <label for="motivo_propuesta_calificacion">Argumente *</label>
+                                <textarea class="form-control" id="motivo_propuesta_calificacion" name="motivo_propuesta_calificacion" required>{{ old('motivo_propuesta_calificacion') }}</textarea>
                             </div>
                         </div>
                         {{-- Fin de la Pregunta 1 --}}
@@ -79,8 +79,8 @@
                                 </select>
                             </div>
                             <div class="col-md-8">
-                                <label for="novedoso">Argumente *</label>
-                                <textarea class="form-control" id="novedoso" name="novedoso" required>{{ old('novedoso') }}</textarea>
+                                <label for="conocimiento_motivos_calificacion">Argumente *</label>
+                                <textarea class="form-control" id="conocimiento_motivos_calificacion" name="conocimiento_motivos_calificacion" required>{{ old('conocimiento_motivos_calificacion') }}</textarea>
                             </div>
                         </div>
                         {{-- Fin de la Pregunta 2 --}}
