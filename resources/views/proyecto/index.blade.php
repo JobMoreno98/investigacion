@@ -236,7 +236,8 @@
                                         </div>
                                     @endif
                                     @if($proyecto->evaluado == 'Si' && Auth::user()->role == 'admin')
-                                        <p><a class="btn btn-dark" role="button" href="{{route('imprimir-evaluacion',$proyecto->id)}}">Imprimir Evaluación</a></p>
+                                    
+                                        <p><a class="btn btn-dark" role="button" href="{{route('imprimir-evaluacion',$proyecto->id,)}}">Imprimir Evaluación</a></p>
                                     @endif
                                 @endif
                             @endif

@@ -21,6 +21,8 @@ class PDFController extends Controller
         $proyecto = Proyecto::where('id','=',$proyecto_id)->first();
         $evaluacion = Evaluacion::where('idProyecto','=',$proyecto_id)->first();
         $pdf = \PDF::loadView('evaluacion.formatoEvaluacion', compact('proyecto','evaluacion'));
+        /*$pdf->setOption('enable-javascript', true);
+        return $pdf;*/
         return $pdf->stream('formatoEvaluacion.pdf');
 
     }

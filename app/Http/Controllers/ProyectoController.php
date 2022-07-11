@@ -34,8 +34,8 @@ class ProyectoController extends Controller
             return view('proyecto.index')->with('proyectos', $proyectos)->with('evaluadores', $evaluadores)->with('role',$role);
         }elseif (Auth::user()->role == 'investigador,evaluador'){
             $role->role = 'investigador,evaluador';
-            $proyectos = VsProyecto::where('activo','=','1')->where('IdUsuario','=',Auth::user()->id)->get();
-            $numero_proyectos = DB::table('proyectos')->select(DB::raw('COUNT(*) as cuenta_proyectos'))->where('IdUsuario','=',Auth::user()->id)->first();
+            $proyectos = VsProyecto::where('activo','=','1')->where('IdUsuario','=',Auth::user()->id)->where('anio','2022')->get();
+            $numero_proyectos = DB::table('proyectos')->select(DB::raw('COUNT(*) as cuenta_proyectos'))->where('IdUsuario','=',Auth::user()->id)->where('anio','2022')->first();
             return view('proyecto.index')->with('proyectos', $proyectos)->with('numero_proyectos', $numero_proyectos)->with('role',$role);
         }else{
             return view('home');
